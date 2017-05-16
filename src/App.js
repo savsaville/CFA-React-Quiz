@@ -15,6 +15,7 @@ class App extends Component {
     };
     this.updateSelected = this.updateSelected.bind(this);
     this.submitAnswer = this.submitAnswer.bind(this);
+    this.retryButton = this.retryButton.bind(this);
     this.quiz_data = [
       {
         question: 'what is the meaning of life?',
@@ -55,6 +56,12 @@ class App extends Component {
     })
   }
 
+  retryButton() {
+    this.setState({
+      progress: 0
+    })
+  }
+
   render() {
     return (
       <div>
@@ -72,7 +79,8 @@ class App extends Component {
           </div>
         )
         : (
-        <Results score={this.state.score} end_message="Congratulations, you have finished!" />
+        <Results score={this.state.score} end_message="Congratulations, you have finished!"
+                 handleReset={this.retryButton}/>
          )}
       </div>
     );
