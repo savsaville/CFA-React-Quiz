@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Question from './Question';
+import ProgressBar from './ProgressBar';
+import MultiChoice from './MultiChoice';
 
 class App extends Component {
   constructor(props) {
@@ -27,6 +29,8 @@ class App extends Component {
       <div className="App">
         <h2>Quiz App</h2>
         <Question current_question={this.quiz_data[this.state.progress].question} />
+        <ProgressBar current_step={this.state.progress + 1} question_length={this.quiz_data.length} />
+        <MultiChoice />
       </div>
     );
   }
