@@ -8,8 +8,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      progress: 0
+      progress: 0,
+      selected: 'Pick One!'
     };
+    this.updateSelected = this.updateSelected.bind(this);
     this.quiz_data = [
       {
         question: 'what is the meaning of life?',
@@ -24,13 +26,21 @@ class App extends Component {
     ]
   }
 
+  updateSelected(answer) {
+    this.setState({
+      selected: answer
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h2>Quiz App</h2>
         <Question current_question={this.quiz_data[this.state.progress].question} />
         <ProgressBar current_step={this.state.progress + 1} question_length={this.quiz_data.length} />
-        <MultiChoice />
+        <MultiChoice
+          answers={this.quiz_data[this.state.progress].possible_answers}
+          updateSelected={this.updateSelected} />
       </div>
     );
   }
