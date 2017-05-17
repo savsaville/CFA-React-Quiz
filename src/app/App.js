@@ -4,6 +4,7 @@ import Question from '../questions/Question';
 import ProgressBar from '../progressbar/ProgressBar';
 import MultiChoice from '../multichoice/MultiChoice';
 import Results from '../results/Results';
+import { Button, Icon, Col, Card } from 'react-materialize';
 
 class App extends Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class App extends Component {
     } else {
       this.setState({
         progress: this.state.progress + 1,
-        selected: 'Pick One!'
+        selected: 'Pick One!!!!'
       })
     }
   }
@@ -65,7 +66,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Quiz App</h2>
+        <Col m={6} s={12}>
+            <Card className='green darken-3' textClassName='white-text' title={<h2>Quiz App</h2>} actions={[<a href='#'>This is a link</a>]}>
+
 
         {this.state.progress < this.quiz_data.length ? (
           <div>
@@ -82,6 +85,8 @@ class App extends Component {
         <Results score={this.state.score} end_message="Congratulations, you have finished!"
                  handleReset={this.retryButton}/>
          )}
+       </Card>
+   </Col>
       </div>
     );
   }

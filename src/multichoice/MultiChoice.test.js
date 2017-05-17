@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MultiChoice from './MultiChoice';
+import { Button, Icon, } from 'react-materialize';
 
 it('renders without crashing', () => {
   var sample_data = [

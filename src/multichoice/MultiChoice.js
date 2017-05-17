@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Icon, } from 'react-materialize';
+import PropTypes from 'prop-types';
 
 class MultiChoice extends Component {
   render() {
@@ -14,8 +15,16 @@ class MultiChoice extends Component {
       </div>
     )
   }
-
-
 }
+
+  MultiChoice.propTypes = {
+   answers: PropTypes.array.isRequired,
+   updateSelected: PropTypes.func.isRequired,
+   handleSubmit: PropTypes.func.isRequired,
+   selectedAnswer: PropTypes.string.isRequired
+  }
+
+
+
 
 export default MultiChoice;
