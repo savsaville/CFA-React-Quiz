@@ -4,7 +4,7 @@ import Question from '../questions/Question';
 import ProgressBar from '../progressbar/ProgressBar';
 import MultiChoice from '../multichoice/MultiChoice';
 import Results from '../results/Results';
-import { Button, Icon, Col, Card } from 'react-materialize';
+import { Col, Card, Icon} from 'react-materialize';
 
 class App extends Component {
   constructor(props) {
@@ -62,31 +62,32 @@ class App extends Component {
       progress: 0
     })
   }
+  // s6 devise devise-box-overflow z-depth-4 offset-m3 green lighten-5 card-panel hoverable
 
   render() {
     return (
       <div className="App">
-        <Col m={6} s={12}>
-            <Card className='green darken-3' textClassName='white-text' title={<h2>Quiz App</h2>} actions={[<a href='#'>This is a link</a>]}>
+        <Col s={6} z-depth={4}>
+            <Card className='blue lighten-5' textClassName='black-text' title={<h2>Quiz App</h2>} actions={[<a href='https://github.com/savsaville/CFA-React-Quiz'>See the source code here</a>]}>
 
 
-        {this.state.progress < this.quiz_data.length ? (
-          <div>
-            <Question current_question={this.quiz_data[this.state.progress].question} />
-            <ProgressBar current_step={this.state.progress + 1} question_length={this.quiz_data.length} />
-            <MultiChoice
-              answers={this.quiz_data[this.state.progress].possible_answers}
-              updateSelected={this.updateSelected}
-              handleSubmit={this.submitAnswer}
-              selectedAnswer={this.state.selected} />
-          </div>
-        )
-        : (
-        <Results score={this.state.score} end_message="Congratulations, you have finished!"
-                 handleReset={this.retryButton}/>
-         )}
-       </Card>
-   </Col>
+            {this.state.progress < this.quiz_data.length ? (
+              <div>
+                <Question current_question={this.quiz_data[this.state.progress].question} />
+                <ProgressBar current_step={this.state.progress + 1} question_length={this.quiz_data.length} />
+                <MultiChoice
+                  answers={this.quiz_data[this.state.progress].possible_answers}
+                  updateSelected={this.updateSelected}
+                  handleSubmit={this.submitAnswer}
+                  selectedAnswer={this.state.selected} />
+              </div>
+            )
+            : (
+            <Results score={this.state.score} end_message="Congratulations, you have finished!"
+                     handleReset={this.retryButton}/>
+             )}
+          </Card>
+        </Col>
       </div>
     );
   }

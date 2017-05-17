@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-materialize": "^0.18.4",
+    "react-pacman-progress": "^0.2.0",
+    "sweetalert-react": "^0.4.10"
   },
   "devDependencies": {
     "enzyme": "^2.8.2",

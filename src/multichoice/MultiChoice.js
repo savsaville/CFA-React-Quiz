@@ -7,9 +7,10 @@ class MultiChoice extends Component {
     return (
       <div>
 
-          {this.props.answers.map((answer, i) => <button key={i} onClick={() => this.props.updateSelected(answer)}> {answer} </button>)}
+          {this.props.answers.map((answer, i) => <Button flat="waves-effect waves-black" key={i} onClick={() => this.props.updateSelected(answer)}> {answer} </Button>)}
           <p> You have selected: {this.props.selectedAnswer} </p>
           <Button waves='light' onClick={this.props.handleSubmit}><Icon left>done</Icon>Submit</Button>
+
 
 
       </div>
