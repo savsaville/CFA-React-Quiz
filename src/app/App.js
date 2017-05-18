@@ -32,6 +32,16 @@ class App extends Component {
         question: 'who is the worst at table tennis in the class?',
         correct_answer: 'Josh',
         possible_answers: [ 'Josh', 'Josh', 'Josh', 'Josh']
+      },
+      {
+        question: 'How many caps does Richie Maccaw have?',
+        correct_answer: '148',
+        possible_answers: [ '100', '120', '148', '150']
+      },
+      {
+        question: 'Who is the oldest cat in the world?',
+        correct_answer: 'Benny',
+        possible_answers: [ 'Fluffy', 'Tim', 'Benny', 'Biggles']
       }
     ]
   }
