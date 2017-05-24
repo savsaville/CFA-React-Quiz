@@ -42,7 +42,17 @@ class App extends Component {
         question: 'Who is the oldest cat in the world?',
         correct_answer: 'Benny',
         possible_answers: [ 'Fluffy', 'Tim', 'Benny', 'Biggles']
-      }
+      },
+      {
+        question: 'What is the capital of Mali?',
+        correct_answer: 'Timbuctoo',
+        possible_answers: [ 'It has no captial', 'Addis Abbaba', 'Timbuctoo', 'Bogota']
+      },
+      {
+        question: 'How tall is Zac Effron?',
+        correct_answer: '173cm',
+        possible_answers: [ '160cm', '168cm', '173cm', '180cm']
+      },
     ]
   }
 
